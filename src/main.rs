@@ -1,3 +1,5 @@
+#![doc = include_str!("../README.md")]
+
 mod collections;
 use std::time::Instant;
 use rand::Rng;
@@ -16,7 +18,7 @@ const TOP_N_RESULTS: usize = 10;
 fn main() {
     let time = Instant::now();
     let mut collection = Collection::new();
-    for i in 0..5000000 {
+    for i in 0..1000000 {
         collection.add_embedding(uuid::Uuid::new_v4());
     }
     println!("Init time: {}", time.elapsed().as_millis());
